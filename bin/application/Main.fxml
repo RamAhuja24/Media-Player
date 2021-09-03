@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <center>
+      <MediaView fx:id="mv" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <VBox prefHeight="102.0" prefWidth="612.0" BorderPane.alignment="CENTER">
+         <children>
+            <Slider fx:id="ts" majorTickUnit="10.0" prefHeight="0.0" prefWidth="574.0" />
+            <HBox alignment="CENTER" prefHeight="113.0" prefWidth="596.0" spacing="20.0">
+               <children>
+                  <Button fx:id="revbtn" mnemonicParsing="false" onAction="#rev" prefHeight="10.0" prefWidth="10.0" />
+                  <Button fx:id="playbtn" mnemonicParsing="false" onAction="#play" prefHeight="10.0" prefWidth="10.0" />
+                  <Button fx:id="forbtn" mnemonicParsing="false" onAction="#forw" prefHeight="10.0" prefWidth="10.0" />
+                  <Slider fx:id="vs" prefHeight="10.0" prefWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin></Slider>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openMenu" text="Open File" />
+                  <MenuItem mnemonicParsing="false" text="Save File" />
+                  <MenuItem mnemonicParsing="false" onAction="#exitPlayer" text="Exit Player " />
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Tools">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Play" />
+                  <MenuItem mnemonicParsing="false" text="Pause" />
+                  <MenuItem mnemonicParsing="false" text="rewind" />
+                  <MenuItem mnemonicParsing="false" text="Forward" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About this Player" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
